@@ -1,23 +1,6 @@
 
 ## Android-PickerView
 
-[![Bintray](https://img.shields.io/bintray/v/contrarywind/maven/Android-PickerView.svg)](https://bintray.com/contrarywind/maven/Android-PickerView)
-[![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg)](https://android-arsenal.com/api?level=9) 
-[![license](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-
-[![GitHub stars](https://img.shields.io/github/stars/Bigkoo/Android-PickerView.svg?style=social)](https://github.com/Bigkoo/Android-PickerView/stargazers) [![GitHub forks](https://img.shields.io/github/forks/Bigkoo/Android-PickerView.svg?style=social)](https://github.com/Bigkoo/Android-PickerView/network) [![GitHub watchers](https://img.shields.io/github/watchers/Bigkoo/Android-PickerView.svg?style=social)](https://github.com/Bigkoo/Android-PickerView/watchers)
-
-### [English Document](https://github.com/Bigkoo/Android-PickerView/blob/master/README-en.md)
-</br>
-
-#### 更多详请及注意事项，请查看 [Wiki文档](https://github.com/Bigkoo/Android-PickerView/wiki)
-
-#### 对于使用上有任何疑问或优化建议等，欢迎加入QQ群讨论交流技术问题。
-
-交流群1： 387051294（已满）
-
-交流群2： 219962328
-
 ## 介绍
 
 这是一款仿iOS的PickerView控件，有时间选择器和选项选择器，3.x新版本的详细特性如下：
@@ -31,6 +14,7 @@
 * 支持自定义布局。
 * 支持item的分隔线设置。
 * 支持item间距设置。
+* 支持中间选择文字的背景颜色的设置
 * 时间选择器支持起始和终止日期设定。
 * 支持“年，月，日，时，分，秒”，“省，市，区”等选项的单位（label）显示、隐藏和自定义。
 * 支持自定义文字、颜色、文字大小等属性
@@ -38,17 +22,6 @@
 * 支持Dialog 模式。
 * 支持自定义设置容器。
 
-
-![TimePicker.gif](https://github.com/Bigkoo/Android-PickerView/blob/master/preview/timepicker.gif)
-![TimePickerNight.gif](https://github.com/Bigkoo/Android-PickerView/blob/master/preview/timepicker_night.gif)
-![lunar.gif](https://github.com/Bigkoo/Android-PickerView/blob/master/preview/lunar.gif)
-![XOffset.png](https://github.com/Bigkoo/Android-PickerView/blob/master/preview/Screen%20Shot%202017-11-09%20at%204.25.02%20PM.png)
-![Province.gif](https://github.com/Bigkoo/Android-PickerView/blob/master/preview/JsonData.gif)
-![CustomLayout.gif](https://github.com/Bigkoo/Android-PickerView/blob/master/preview/CustomLayout.gif)
-
-
-### 有兴趣研究3D滚轮效果的实现机制，希望把源码研究透彻的可以看看这篇博客：
-### [Android-PickerView系列之源码解析篇（二）](http://blog.csdn.net/qq_22393017/article/details/59488906)
 
 ### 使用注意事项
 * 注意：当我们进行设置时间的启始位置时，需要特别注意月份的设定
@@ -66,9 +39,6 @@
 * 新增X偏移量设定，优化视觉效果。
 * 新增农历模式。
 
-#### 更多历史版本详情，请查阅：[更新说明（3.x版本）](https://github.com/Bigkoo/Android-PickerView/wiki/%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%EF%BC%883.x%E7%89%88%E6%9C%AC%EF%BC%89) 
-
-#### 方法名与参数请查阅：[方法名与参数说明文档](https://github.com/Bigkoo/Android-PickerView/wiki/%E6%96%B9%E6%B3%95%E5%90%8D%E4%B8%8E%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%EF%BC%883.x%E7%89%88%E6%9C%AC%EF%BC%89)
 
 </br>
 
@@ -119,7 +89,6 @@ TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTi
  pvOptions.setPicker(options1Items, options2Items, options3Items);
  pvOptions.show(); 
 ```
-#### 大功告成~
 
 #### 3.如果默认样式不符合你的口味，可以自定义各种属性：
 ```java
@@ -181,6 +150,7 @@ pvOptions = new  OptionsPickerView.Builder(this, new OptionsPickerView.OnOptions
                 .setCancelColor(Color.BLUE)//取消按钮文字颜色
                 .setTitleBgColor(0xFF333333)//标题背景颜色 Night mode
                 .setBgColor(0xFF000000)//滚轮背景颜色 Night mode
+                .setTextCenterBgColor(0xff000000)//中间选择文字的背景颜色
                 .setContentTextSize(18)//滚轮文字大小
                 .setLinkage(false)//设置是否联动，默认true
                 .setLabels("省", "市", "区")//设置选择的三级单位
@@ -240,33 +210,9 @@ pvOptions = new  OptionsPickerView.Builder(this, new OptionsPickerView.OnOptions
         pvCustomOptions.setPicker(cardItem);//添加数据
 ```
 
-#### 5.对使用还有疑问的话，可参考Demo代码
-[请戳我查看demo代码](https://github.com/Bigkoo/Android-PickerView/blob/master/app/src/main/java/com/bigkoo/pickerviewdemo/MainActivity.java)
 
 
 
-### 效果图（招行信用卡的“掌上生活”里面条件选择器他们用的就是我这个库，大家可以当实际项目参考）
-![](https://github.com/saiwu-bigkoo/Android-PickerView/blob/master/preview/pickerdemo_zhangshangshenghuo.gif)
 
 
-### Thanks
 
-- [WheelView](https://github.com/venshine/WheelView)
-- [androidWheelView](https://github.com/weidongjian/androidWheelView/)
-
-## License
-
-```
-Copyright 2014 Bigkoo
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
